@@ -9,10 +9,10 @@
 //Действие, выполняемое при клике на любую кнопку
 $(".btn").click(function () {
     var textArea = $("#inputVal");
-    if (this.innerHTML != "=" && this.innerHTML != "√" & this.innerHTML != "Pi" & this.innerHTML != "e") {
+    if (this.innerHTML != "=" && this.innerHTML != "√" & this.innerHTML != "π" & this.innerHTML != "e") {
         //Добавление значения кнопки в текстовое поле
         textArea.val(textArea.val() + this.innerHTML);
-    } else if (this.innerHTML == "Pi") {
+    } else if (this.innerHTML == "π") {
         textArea.val(textArea.val() + 3.14);
     } else if (this.innerHTML == 'e') {
         textArea.val(textArea.val() + 2.71);
