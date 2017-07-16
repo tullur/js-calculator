@@ -30,7 +30,8 @@ $(".btn").click(function () {
     }
     //Если нажата кнопка "с", то стирает все из текстового поля
     if (this.innerHTML == "c") {
-        textArea.val(str.substring(0, str.length - 1));
+        textArea.val("");
+        //textArea.val(str.substring(0, str.length - 1));
     }
 });
 
