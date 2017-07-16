@@ -1,53 +1,60 @@
-//var signs=["√","Pi","e","/","1","2","3","*","4","5","6","-","7","8","9","+","0",".","c","="];
-//var calc=document.getElementById("calc");
-// 
-////Добавление кнопок к форме калькулятора
-//for(var i=0;i<signs.length;i++){
-//    calc.innerHTML+="<button class=btn>"+signs[i]+"</button>";
-//}
-
 //Действие, выполняемое при клике на любую кнопку
 $(".btn").click(function () {
     var textArea = $("#inputVal");
-    if (this.innerHTML != "=" && this.innerHTML != "√" & this.innerHTML != "π" & this.innerHTML != "e") {
-        //Добавление значения кнопки в текстовое поле
-        textArea.val(textArea.val() + this.innerHTML);
-    } else if (this.innerHTML == "π") {
-        textArea.val(textArea.val() + 3.14);
-    } else if (this.innerHTML == 'e') {
-        textArea.val(textArea.val() + 2.71);
-    } else if (this.innerHTML == "√") {
+    var str = (textArea.val()).toString();
+    var p = Math.PI;
+    var e = Math.E;
+
+    if (this.innerHTML != "=" && this.innerHTML != "√") {
+        if (str != "") {
+            if (
+                (str[str.length - 1] == '/' || str[str.length - 1] == '+' || str[str.length - 1] == '-' || str[str.length - 1] == '*' || str[str.length - 1] == "p" || str[str.length - 1] == ".") &&
+                (this.innerHTML == '/' || this.innerHTML == '+' || this.innerHTML == '-' || this.innerHTML == '*' || this.innerHTML == "p" || this.innerHTML == '.')) {} else {
+                textArea.val(textArea.val() + this.innerHTML);
+            }
+        } else if (str == "" && (this.innerHTML != '/' && this.innerHTML != '+' && this.innerHTML != '*' && this.innerHTML != '.')) {
+            textArea.val(textArea.val() + this.innerHTML);
+        }
+
+    }
+    //    else if (this.innerHTML == "p") {
+    //        textArea.val(textArea.val() + "p");
+    //    } 
+    //    else if (this.innerHTML == 'e') {
+    //        textArea.val(textArea.val() + "e");
+    //} 
+    else if (this.innerHTML == "√") {
         textArea.val(Math.sqrt(textArea.val()));
     } else {
-        //Если нажата кнопка "=", то, приведя выражение
-        // в текстовом поле к javascript, вычислить значение
         textArea.val(eval(textArea.val()));
     }
     //Если нажата кнопка "с", то стирает все из текстового поля
-  
-if (this.innerHTML == "c") {
-        var str =(textArea.val()).toString();
-        
-        textArea.val(str.substring(0, str.length - 2));
+    if (this.innerHTML == "c") {
+        textArea.val(str.substring(0, str.length - 1));
     }
 });
-
 
 
 var textarea = document.querySelector('#inputVal');
 var btn = document.querySelectorAll('button');
 for (var i = 0; i < btn.length; i++) {
     btn[i].addEventListener('click', autosize);
+    btn[i].addEventListener('click', playAudio);
 }
-
 
 
 function autosize() {
     var el = textarea;
     setTimeout(function () {
         el.style.cssText = 'height:auto; padding:0';
-        // for box-sizing other than "content-box" use:
-        // el.style.cssText = '-moz-box-sizing:content-box';
+
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
     }, 0);
+}
+
+function playAudio() {
+    var myAudio = new Audio;
+    myAudio.volume = 0.05;
+    myAudio.src = "M1.mp3";
+    myAudio.play();
 }
