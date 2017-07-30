@@ -1,14 +1,18 @@
+body{
+    background-color: #f74f32;
+}
 .btn {
     width: 80px;
     height: 80px;
     margin: 20px;
-    background: #2f3432;
+    background: #fafafa;
+    color:#f74f32;
     display: inline-block;
     text-align: center;
     line-height: 80px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0px 5px 2px 0px rgba(20, 20, 20, 1);
+    box-shadow: 0px 9px 42px -8px rgba(20, 20, 20, 1);
 }
 
 button {
@@ -16,18 +20,19 @@ button {
     border: none;
     outline: none;
     color: #fff;
-    font-size: 26px;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 button:active {
-    box-shadow: 0 3px 1px #222;
+   
     transform: translateY(4px);
     filter: brightness(87%);
 }
 
 .btn:nth-child(-n+4) {
-    background-color: gray;
+    background-color: #f9a799;
+    color:#fff;
 }
 
 .btn:nth-child(4n-2) {
@@ -35,20 +40,22 @@ button:active {
 }
 
 .btn:nth-child(4n+1) {
-    background-color: #ff4461;
+    background-color: #f9a799;
+    color:#fff;
     margin-right: 0;
 }
 
+/*
 .btn:last-child {
     background-color: #fd9932;
 }
+*/
 
 .calc-bg {
     width: 580px;
     height: 100%;
-    background-color: #3f4440;
     border-radius: 20px;
-    ;
+    margin: 0 auto;
 }
 
 #calc {
@@ -59,20 +66,19 @@ button:active {
 }
 
 #inputVal {
-    width: 440px;
+    width: 400px;
     overflow: hidden;
     height: 80px;
     display: block;
     border: 0px;
     font-size: 16px;
     resize: vertical;
-    padding: 0;
-    border-radius: 15px;
+    padding: 0 20px;
+    border-radius:40px;
     outline: none;
     font-size: 60px;
     line-height: 80px;
     text-align: right;
-    color: #000;
-    background-color: #bccd96;
+    color: #fff;
+    background-color: #e04a30;
 }
-
